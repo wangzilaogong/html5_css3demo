@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var i ;
+        function draw(id){
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            setInterval(painting,100);
+            i=0;
+        }
+        function painting(){
+            context.fillStyle = 'green';
+            context.fillRect(i,0,10,10);
+            i+=20;
+        }
+
+    </script>
+</head>
+<body onload="draw('canvas')">
+    <canvas id = "canvas" width="400" height="400"></canvas>
+</body>
+</html>

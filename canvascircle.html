@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cricle</title>
+    <script>
+        function draw(id){
+            var canvas = document.getElementById(id);
+            var context = canvas.getContext('2d');
+            context.fillStyle = '#f1f2f3';
+            context.fillRect(0,0,400,400);
+            for(var i = 0 ;i <10 ; i++){
+                context.beginPath();
+                context.arc(25*i,25*i,10*i,0,Math.PI*2,true);
+                context.closePath();
+                context.fillStyle = "rgba(255,0,0,0.25)";
+                context.fill();
+            }
+
+        }
+
+    </script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body onload="draw('canvas')">
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+</body>
+</html>

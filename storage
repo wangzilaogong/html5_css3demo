@@ -1,0 +1,8 @@
+sessionStorage
+就是把数据对象保存到session 对象中.
+session就是打开到关闭网站之间要求保存的数据
+key value 临时储存
+
+2 永久储存
+  localStorage
+  把数据保存再硬件本地的

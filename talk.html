@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <script>
+        function saveStorage(id){
+            var data = document.getElementById(id).value;
+            var time = new Date().getTime();
+            localStorage.setItem(time,data);
+            alert("数据已经被保存了");
+            readStorage('msg');
+        }
+        function readStorage(id){
+            var reselt = "<table border='1'>";
+            for(var i = 0; i<localStorage.length; i++){
+                var key = localStorage.key(i);
+                var value = localStorage.getItem(key);
+                var date = new Date();
+                date.setTime(key);
+                var datestr = date.toGMTString();
+                reselt+='<tr><td>'+value+'</td></tr>'
+            }
+            reselt+='</table>';
+            var target = document.getElementById(id);
+            target.innerHTML = reselt;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>留言板</h1>
+    <textarea id="dome" cols="60" rows="10"></textarea><br/>
+    <input type="button" value="保存" onclick="saveStorage('dome');">
+    <input type="button" value="清除" onclick="clearStorage('msg');">
+    <input type="button" value="读取" onclick="readStorage('msg');">
+    <hr>
+    <p id = 'msg'></p>
+</body>
+</html>

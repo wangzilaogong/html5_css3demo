@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function draw(id){
+            var canvas = document.getElementById(id);
+            var context = canvas.getContext('2d');
+            context.fillStyle ='green';
+            context.fillRect(0,0,800,300);
+            context.fillStyle = '#fff';
+            context.strokeStyle='#fff';
+            context.font = 'bold 40px 微软雅黑';
+            context.fillText('麦子学院',50,50);
+            context.strokeText('麦子学院',50,100);
+
+        }
+    </script>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body onload="draw('canvas')">
+    <canvas id="canvas" width="800" height="300"></canvas>
+</body>
+</html>
